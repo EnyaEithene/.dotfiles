@@ -25,7 +25,7 @@ PROMPT_COMMAND="set_terminal_title"
 export PATH="/usr/local/texlive/2024/bin/x86_64-linux:$HOME/.local/bin:$HOME/.dotfiles/.bin:$PATH:$HOME/.tmuxifier/bin:$PATH"
 export MANPATH="/usr/local/texlive/2024/texmf-dist/doc/man:$MANPATH"
 export INFOPATH="/usr/local/texlive/2024/texmf-dist/doc/info:$INFOPATH"
-
+export EDITOR=lvim
 export LIBVIRT_DEFAULT_URI=qemu:///system
 
 # Set up fzf key bindings and fuzzy completion
