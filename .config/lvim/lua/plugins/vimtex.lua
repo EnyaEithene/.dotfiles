@@ -23,6 +23,9 @@ return {
 
         -- Tell vimtex compiler to use nvr for inverse search
         vim.g.vimtex_compiler_progname = "nvr"
+
+        -- Completion mapping (\u a gets translated directly into .tex file)
+        vim.g.vimtex_imaps_enabled = 1
       end,
     }
 }
