@@ -1,4 +1,5 @@
 require("keymaps")
+require("theme")
 
 local config_lua_path = vim.fn.stdpath("config") .. "/lua/?.lua"
 package.path = package.path .. ";" .. config_lua_path
@@ -32,14 +33,3 @@ lvim.plugins = vim.list_extend(lvim.plugins or {}, flatten_plugin_modules({
 -- Line settings
 vim.opt.relativenumber = true -- relative line numbers
 vim.opt.wrap = true -- wrap lines
-
--- Theme
-lvim.colorscheme = "catppuccin"
-vim.api.nvim_create_autocmd("ColorScheme", {
-  pattern = "catppuccin",
-  callback = function()
-    -- Your custom highlights here
-    vim.cmd([[highlight LineNr guifg=#7a7a7a]])  -- example darker gray
-    vim.cmd([[highlight CursorLineNr guifg=#C0C0C0]])  -- lighter for current line number
-  end,
-})
