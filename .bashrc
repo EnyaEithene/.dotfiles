@@ -22,7 +22,7 @@ function set_terminal_title() {
 # Use the function every time you change directories
 PROMPT_COMMAND="set_terminal_title"
 
-export PATH="/usr/local/texlive/2024/bin/x86_64-linux:$HOME/.local/bin:$HOME/.dotfiles/.bin:$PATH"
+export PATH="/usr/local/texlive/2024/bin/x86_64-linux:$HOME/.local/bin:$HOME/.dotfiles/.bin:$PATH:$HOME/.tmuxifier/bin:$PATH"
 export MANPATH="/usr/local/texlive/2024/texmf-dist/doc/man:$MANPATH"
 export INFOPATH="/usr/local/texlive/2024/texmf-dist/doc/info:$INFOPATH"
 
@@ -32,6 +32,7 @@ export LIBVIRT_DEFAULT_URI=qemu:///system
 eval "$(fzf --bash)"
 eval "$(starship init bash)"
 eval "$(zoxide init bash)"
+eval "$(tmuxifier init -)"
 
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
