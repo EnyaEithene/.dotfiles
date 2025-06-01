@@ -1,34 +1,9 @@
 require("keymaps")
 require("theme")
 
-local config_lua_path = vim.fn.stdpath("config") .. "/lua/?.lua"
-package.path = package.path .. ";" .. config_lua_path
-
-local theme_dir = vim.fn.stdpath("config") .. "/themes"
-local theme_paths = vim.fn.glob(theme_dir .. "/*", true, true)
-
-for _, path in ipairs(theme_paths) do
-  table.insert(lvim.plugins, { dir = path })
-end
--- Plugins
-local function flatten_plugin_modules(modules)
-  local result = {}
-  for _, name in ipairs(modules) do
-    local list = require(name)
-    for _, plugin in ipairs(list) do
-      table.insert(result, plugin)
-    end
-  end
-  return result
-end
-
-lvim.plugins = vim.list_extend(lvim.plugins or {}, flatten_plugin_modules({
-  "plugins.git-stuff",
-  "plugins.markdown_preview",
-  "plugins.session",
-  "plugins.vimtex",
-  "plugins.catppuccin",
-}))
+-- Load all plugins dynamically from the plugins/ folder
+local plugins = require("plugins")
+lvim.plugins = vim.list_extend(lvim.plugins or {}, plugins)
 
 -- Line settings
 vim.opt.relativenumber = true -- relative line numbers
