@@ -27,7 +27,7 @@ return {
         -- Completion mapping (\u a gets translated directly into .tex file)
         vim.g.tex_flavor = "latex"
         vim.opt.conceallevel = 2
-        vim.opt.concealcursor = "nciv"  -- conceal in normal, command, insert, visual mode
+        vim.opt.concealcursor = "nc"  -- conceal in normal, command mode
         
         vim.opt.encoding = "utf-8"
         vim.opt.fileencoding = "utf-8"
@@ -41,7 +41,6 @@ return {
             vim.keymap.set("i", "<C-b>", "\\textbf{}<Left>", { buffer = true, desc = "Insert \\textbf{}" })
             vim.keymap.set("i", "<C-i>", "\\textit{}<Left>", { buffer = true, desc = "Insert \\textit{}" })
             vim.keymap.set("i", "<C-u>", "\\underline{}<Left>", { buffer = true, desc = "Insert \\underline{}" })
-            vim.keymap.set("i", "<C-m>", "$$<Left>", { buffer = true, desc = "Insert inline math" })
 
             vim.keymap.set("i", "<A-[>", "\\u a", { buffer = true, noremap = true, desc = "Insert \\u a" })
             vim.keymap.set("i", "<A-]>", "\\^ i", { buffer = true, noremap = true, desc = "Insert \\u a" })
