@@ -22,7 +22,7 @@ function set_terminal_title() {
 # Use the function every time you change directories
 PROMPT_COMMAND="set_terminal_title"
 
-export PATH="/usr/local/texlive/2024/bin/x86_64-linux:$HOME/.local/bin:$HOME/.dotfiles/.bin:$PATH:$HOME/.tmuxifier/bin:$PATH"
+export PATH="$HOME/bin:/usr/local/texlive/2024/bin/x86_64-linux:$HOME/.local/bin:$HOME/.dotfiles/.bin:$PATH:$HOME/.tmuxifier/bin:$PATH"
 export MANPATH="/usr/local/texlive/2024/texmf-dist/doc/man:$MANPATH"
 export INFOPATH="/usr/local/texlive/2024/texmf-dist/doc/info:$INFOPATH"
 export EDITOR=lvim
@@ -41,3 +41,7 @@ function y() {
 	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
 	rm -f -- "$tmp"
 }
+
+if command -v docker &> /dev/null && pgrep dockerd &> /dev/null; then
+    xhost +local:docker > /dev/null 2>&1
+fi

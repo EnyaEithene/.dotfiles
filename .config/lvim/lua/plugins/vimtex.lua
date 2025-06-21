@@ -32,7 +32,10 @@ return {
         vim.opt.encoding = "utf-8"
         vim.opt.fileencoding = "utf-8"
         vim.cmd("syntax enable")
-        
+       
+        -- Disable VimTeX's default mappings
+        vim.g.vimtex_imaps_enabled = 0
+
         -- Macros for tex files only
         vim.api.nvim_create_autocmd("FileType", {
           pattern = "tex",
@@ -47,7 +50,12 @@ return {
             vim.keymap.set("i", "<A-\\>", "\\^ a", { buffer = true, noremap = true, desc = "Insert \\u a" })
             vim.keymap.set("i", "<A-;>", "\\c s", { buffer = true, noremap = true, desc = "Insert \\u a" })
             vim.keymap.set("i", "<A-'>", "\\c t", { buffer = true, noremap = true, desc = "Insert \\u a" })
-
+            
+            vim.keymap.set("i", "<C-A-[>", "\\u A", { buffer = true, noremap = true, desc = "Insert \\u a" })
+            vim.keymap.set("i", "<C-A-]>", "\\^ I", { buffer = true, noremap = true, desc = "Insert \\u a" })
+            vim.keymap.set("i", "<C-A-\\>", "\\^ A", { buffer = true, noremap = true, desc = "Insert \\u a" })
+            vim.keymap.set("i", "<C-A-;>", "\\c S", { buffer = true, noremap = true, desc = "Insert \\u a" })
+            vim.keymap.set("i", "<C-A-'>", "\\c T", { buffer = true, noremap = true, desc = "Insert \\u a" })
             -- Visual-mode mappings
             vim.keymap.set("v", "<C-b>", "<esc>`<i\\textbf{<esc>`>a}<esc>", { buffer = true, desc = "Wrap in \\textbf{}" })
             vim.keymap.set("v", "<C-i>", "<esc>`<i\\textit{<esc>`>a}<esc>", { buffer = true, desc = "Wrap in \\textit{}" })
