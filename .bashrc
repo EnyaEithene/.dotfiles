@@ -45,3 +45,4 @@ function y() {
 if command -v docker &> /dev/null && pgrep dockerd &> /dev/null; then
     xhost +local:docker > /dev/null 2>&1
 fi
+export PATH="$HOME/.local/bin:$PATH"
