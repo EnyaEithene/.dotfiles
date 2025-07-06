@@ -42,6 +42,7 @@ function y() {
 	rm -f -- "$tmp"
 }
 
+# For docker
 if command -v docker &> /dev/null && pgrep dockerd &> /dev/null; then
     xhost +local:docker > /dev/null 2>&1
 fi
