@@ -10,7 +10,8 @@
     "modules-left": [
         "custom/launcher",
         "hyprland/workspaces",
-        "mpris"
+        "custom/keyboard-state"
+        // "mpris"
     ],
     "modules-center": [
         "clock",
@@ -212,7 +213,8 @@
         "interval": 60,
         "on-click": "pamixer --toggle-mute",
         "on-scroll-up": "pamixer --allow-boost --set-limit 150 --increase 5",
-        "on-scroll-down": "pamixer --allow-boost --set-limit 150 --decrease 5"
+        "on-scroll-down": "pamixer --allow-boost --set-limit 150 --decrease 5",
+        "on-click-right": "pavucontrol"
     },
     "custom/launcher": {
         "format": " ",
@@ -291,4 +293,5 @@
         "on-click-right": "swaync-client -d -sw",
         "escape": true,
     }
+  }
 }
