@@ -2,14 +2,19 @@
 # ~/.bashrc
 #
 
+# Run fastfetch when opening terminal (neofetch, but written in C)
+fastfetch -l arch_small
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Aliases
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias nvim=lvim
 PS1='[\u@\h \W]\$ '
 
+# Exports
 export LANG=en_GB.UTF-8
 export LC_ALL=en_GB.UTF-8
 
