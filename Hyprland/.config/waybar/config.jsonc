@@ -174,13 +174,17 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format": "󰤨 {essid}",
+        "format-disconnected": "󰤮 Disconnected",
         "format-wifi": "",
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format": "    {essid}({signalStrength}%)",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "⚠",
-        "on-click": "nmcli radio wifi on",
-        "on-click-right": "nmcli radio wifi off"
+        "on-click": "kitty -e nmtui",
+        "on-click-right": "~/.local/bin/toggle-wifi.sh",
+        "on-update": 10,
+        "max-length": 25
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
@@ -225,7 +229,7 @@
         "format": "",
         "tooltip": false,
         /* "on-click": "bash ~/.config/rofi/leave/leave.sh", */
-        /* "on-click":"rofi-powermenu" */
+        // "on-click":"rofi-powermenu"
         "on-click": "wlogout -p layer-shell"
     },
     "custom/firefox": {
